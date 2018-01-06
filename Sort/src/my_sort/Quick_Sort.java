@@ -16,7 +16,7 @@ public class Quick_Sort extends Sort {
     }
 
     @Override
-    void Sort(Integer[] nums) {
+    public void Sort(Integer[] nums) {
         quick_Sort(nums, 0, nums.length - 1);//对元素从0到n-1进行排序
 
     }

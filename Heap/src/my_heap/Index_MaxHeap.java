@@ -14,7 +14,7 @@ public class Index_MaxHeap<T extends Comparable> {
     private int count;//数据的个数
     private int[] indexes;//索引
     private int[] reverse;//索引数组的索引
-    private int capacity;
+    private int capacity;//容量
 
     public Index_MaxHeap(int capacity) {
         this.capacity = capacity;

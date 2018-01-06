@@ -7,8 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Sort/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Heap/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="gradle-4.2.1" level="application" />
   </component>
 </module>

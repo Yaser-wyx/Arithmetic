@@ -163,7 +163,7 @@ public class StringUtils {
     public static final String CR = "\r";
 
     /**
-     * Represents a failed index search.
+     * Represents a failed index search1.
      * @since 2.1
      */
     public static final int INDEX_NOT_FOUND = -1;
@@ -1311,7 +1311,7 @@ public class StringUtils {
      *
      * @param seq  the CharSequence to check, may be null
      * @param searchChar  the character to find
-     * @return the first index of the search character,
+     * @return the first index of the search1 character,
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from indexOf(String, int) to indexOf(CharSequence, int)
@@ -1327,7 +1327,7 @@ public class StringUtils {
     /**
      *
      * Returns the index within <code>seq</code> of the first occurrence of the
-     * specified character, starting the search at the specified index.
+     * specified character, starting the search1 at the specified index.
      * <p>
      * If a character with value <code>searchChar</code> occurs in the
      * character sequence represented by the <code>seq</code> <code>CharSequence</code>
@@ -1371,7 +1371,7 @@ public class StringUtils {
      * @param seq  the CharSequence to check, may be null
      * @param searchChar  the character to find
      * @param startPos  the start position, negative treated as zero
-     * @return the first index of the search character (always &ge; startPos),
+     * @return the first index of the search1 character (always &ge; startPos),
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from indexOf(String, int, int) to indexOf(CharSequence, int, int)
@@ -1403,7 +1403,7 @@ public class StringUtils {
      *
      * @param seq  the CharSequence to check, may be null
      * @param searchSeq  the CharSequence to find, may be null
-     * @return the first index of the search CharSequence,
+     * @return the first index of the search1 CharSequence,
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from indexOf(String, String) to indexOf(CharSequence, CharSequence)
@@ -1421,9 +1421,9 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position is treated as zero.
-     * An empty ("") search CharSequence always matches.
+     * An empty ("") search1 CharSequence always matches.
      * A start position greater than the string length only matches
-     * an empty search CharSequence.</p>
+     * an empty search1 CharSequence.</p>
      *
      * <pre>
      * StringUtils.indexOf(null, *, *)          = -1
@@ -1443,7 +1443,7 @@ public class StringUtils {
      * @param seq  the CharSequence to check, may be null
      * @param searchSeq  the CharSequence to find, may be null
      * @param startPos  the start position, negative treated as zero
-     * @return the first index of the search CharSequence (always &ge; startPos),
+     * @return the first index of the search1 CharSequence (always &ge; startPos),
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from indexOf(String, String, int) to indexOf(CharSequence, CharSequence, int)
@@ -1500,7 +1500,7 @@ public class StringUtils {
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
      * @param ordinal  the n-th {@code searchStr} to find
-     * @return the n-th index of the search CharSequence,
+     * @return the n-th index of the search1 CharSequence,
      *  {@code -1} ({@code INDEX_NOT_FOUND}) if no match or {@code null} string input
      * @since 2.1
      * @since 3.0 Changed signature from ordinalIndexOf(String, String, int) to ordinalIndexOf(CharSequence, CharSequence, int)
@@ -1520,7 +1520,7 @@ public class StringUtils {
      * @param searchStr  the CharSequence to find, may be null
      * @param ordinal  the n-th {@code searchStr} to find, overlapping matches are allowed.
      * @param lastIndex true if lastOrdinalIndexOf() otherwise false if ordinalIndexOf()
-     * @return the n-th index of the search CharSequence,
+     * @return the n-th index of the search1 CharSequence,
      *  {@code -1} ({@code INDEX_NOT_FOUND}) if no match or {@code null} string input
      */
     // Shared code between ordinalIndexOf(String,String,int) and lastOrdinalIndexOf(String,String,int)
@@ -1554,9 +1554,9 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position is treated as zero.
-     * An empty ("") search CharSequence always matches.
+     * An empty ("") search1 CharSequence always matches.
      * A start position greater than the string length only matches
-     * an empty search CharSequence.</p>
+     * an empty search1 CharSequence.</p>
      *
      * <pre>
      * StringUtils.indexOfIgnoreCase(null, *)          = -1
@@ -1569,7 +1569,7 @@ public class StringUtils {
      *
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
-     * @return the first index of the search CharSequence,
+     * @return the first index of the search1 CharSequence,
      *  -1 if no match or {@code null} string input
      * @since 2.5
      * @since 3.0 Changed signature from indexOfIgnoreCase(String, String) to indexOfIgnoreCase(CharSequence, CharSequence)
@@ -1584,9 +1584,9 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position is treated as zero.
-     * An empty ("") search CharSequence always matches.
+     * An empty ("") search1 CharSequence always matches.
      * A start position greater than the string length only matches
-     * an empty search CharSequence.</p>
+     * an empty search1 CharSequence.</p>
      *
      * <pre>
      * StringUtils.indexOfIgnoreCase(null, *, *)          = -1
@@ -1605,7 +1605,7 @@ public class StringUtils {
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
      * @param startPos  the start position, negative treated as zero
-     * @return the first index of the search CharSequence (always &ge; startPos),
+     * @return the first index of the search1 CharSequence (always &ge; startPos),
      *  -1 if no match or {@code null} string input
      * @since 2.5
      * @since 3.0 Changed signature from indexOfIgnoreCase(String, String, int) to indexOfIgnoreCase(CharSequence, CharSequence, int)
@@ -1662,7 +1662,7 @@ public class StringUtils {
      *
      * @param seq  the <code>CharSequence</code> to check, may be null
      * @param searchChar  the character to find
-     * @return the last index of the search character,
+     * @return the last index of the search1 character,
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from lastIndexOf(String, int) to lastIndexOf(CharSequence, int)
@@ -1694,7 +1694,7 @@ public class StringUtils {
      * <code>-1</code> is returned. Furthermore, a {@code null} or empty ("")
      * <code>CharSequence</code> will return {@code -1}. A start position greater
      * than the string length searches the whole string.
-     * The search starts at the <code>startPos</code> and works backwards;
+     * The search1 starts at the <code>startPos</code> and works backwards;
      * matches starting after the start position are ignored.
      *
      * <p>All indices are specified in <code>char</code> values
@@ -1714,7 +1714,7 @@ public class StringUtils {
      * @param seq  the CharSequence to check, may be null
      * @param searchChar  the character to find
      * @param startPos  the start position
-     * @return the last index of the search character (always &le; startPos),
+     * @return the last index of the search1 character (always &le; startPos),
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from lastIndexOf(String, int, int) to lastIndexOf(CharSequence, int, int)
@@ -1744,7 +1744,7 @@ public class StringUtils {
      *
      * @param seq  the CharSequence to check, may be null
      * @param searchSeq  the CharSequence to find, may be null
-     * @return the last index of the search String,
+     * @return the last index of the search1 String,
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from lastIndexOf(String, String) to lastIndexOf(CharSequence, CharSequence)
@@ -1785,7 +1785,7 @@ public class StringUtils {
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
      * @param ordinal  the n-th last {@code searchStr} to find
-     * @return the n-th last index of the search CharSequence,
+     * @return the n-th last index of the search1 CharSequence,
      *  {@code -1} ({@code INDEX_NOT_FOUND}) if no match or {@code null} string input
      * @since 2.5
      * @since 3.0 Changed signature from lastOrdinalIndexOf(String, String, int) to lastOrdinalIndexOf(CharSequence, CharSequence, int)
@@ -1800,9 +1800,9 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position returns {@code -1}.
-     * An empty ("") search CharSequence always matches unless the start position is negative.
+     * An empty ("") search1 CharSequence always matches unless the start position is negative.
      * A start position greater than the string length searches the whole string.
-     * The search starts at the startPos and works backwards; matches starting after the start
+     * The search1 starts at the startPos and works backwards; matches starting after the start
      * position are ignored.
      * </p>
      *
@@ -1825,7 +1825,7 @@ public class StringUtils {
      * @param seq  the CharSequence to check, may be null
      * @param searchSeq  the CharSequence to find, may be null
      * @param startPos  the start position, negative treated as zero
-     * @return the last index of the search CharSequence (always &le; startPos),
+     * @return the last index of the search1 CharSequence (always &le; startPos),
      *  -1 if no match or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from lastIndexOf(String, String, int) to lastIndexOf(CharSequence, CharSequence, int)
@@ -1842,7 +1842,7 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position returns {@code -1}.
-     * An empty ("") search CharSequence always matches unless the start position is negative.
+     * An empty ("") search1 CharSequence always matches unless the start position is negative.
      * A start position greater than the string length searches the whole string.</p>
      *
      * <pre>
@@ -1855,7 +1855,7 @@ public class StringUtils {
      *
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
-     * @return the first index of the search CharSequence,
+     * @return the first index of the search1 CharSequence,
      *  -1 if no match or {@code null} string input
      * @since 2.5
      * @since 3.0 Changed signature from lastIndexOfIgnoreCase(String, String) to lastIndexOfIgnoreCase(CharSequence, CharSequence)
@@ -1873,9 +1873,9 @@ public class StringUtils {
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
      * A negative start position returns {@code -1}.
-     * An empty ("") search CharSequence always matches unless the start position is negative.
+     * An empty ("") search1 CharSequence always matches unless the start position is negative.
      * A start position greater than the string length searches the whole string.
-     * The search starts at the startPos and works backwards; matches starting after the start
+     * The search1 starts at the startPos and works backwards; matches starting after the start
      * position are ignored.
      * </p>
      *
@@ -1894,7 +1894,7 @@ public class StringUtils {
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
      * @param startPos  the start position
-     * @return the last index of the search CharSequence (always &le; startPos),
+     * @return the last index of the search1 CharSequence (always &le; startPos),
      *  -1 if no match or {@code null} input
      * @since 2.5
      * @since 3.0 Changed signature from lastIndexOfIgnoreCase(String, String, int) to lastIndexOfIgnoreCase(CharSequence, CharSequence, int)
@@ -1924,7 +1924,7 @@ public class StringUtils {
     // Contains
     //-----------------------------------------------------------------------
     /**
-     * <p>Checks if CharSequence contains a search character, handling {@code null}.
+     * <p>Checks if CharSequence contains a search1 character, handling {@code null}.
      * This method uses {@link String#indexOf(int)} if possible.</p>
      *
      * <p>A {@code null} or empty ("") CharSequence will return {@code false}.</p>
@@ -1938,7 +1938,7 @@ public class StringUtils {
      *
      * @param seq  the CharSequence to check, may be null
      * @param searchChar  the character to find
-     * @return true if the CharSequence contains the search character,
+     * @return true if the CharSequence contains the search1 character,
      *  false if not or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from contains(String, int) to contains(CharSequence, int)
@@ -1951,7 +1951,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if CharSequence contains a search CharSequence, handling {@code null}.
+     * <p>Checks if CharSequence contains a search1 CharSequence, handling {@code null}.
      * This method uses {@link String#indexOf(String)} if possible.</p>
      *
      * <p>A {@code null} CharSequence will return {@code false}.</p>
@@ -1967,7 +1967,7 @@ public class StringUtils {
      *
      * @param seq  the CharSequence to check, may be null
      * @param searchSeq  the CharSequence to find, may be null
-     * @return true if the CharSequence contains the search CharSequence,
+     * @return true if the CharSequence contains the search1 CharSequence,
      *  false if not or {@code null} string input
      * @since 2.0
      * @since 3.0 Changed signature from contains(String, String) to contains(CharSequence, CharSequence)
@@ -1980,7 +1980,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if CharSequence contains a search CharSequence irrespective of case,
+     * <p>Checks if CharSequence contains a search1 CharSequence irrespective of case,
      * handling {@code null}. Case-insensitivity is defined as by
      * {@link String#equalsIgnoreCase(String)}.
      *
@@ -1999,7 +1999,7 @@ public class StringUtils {
      *
      * @param str  the CharSequence to check, may be null
      * @param searchStr  the CharSequence to find, may be null
-     * @return true if the CharSequence contains the search CharSequence irrespective of
+     * @return true if the CharSequence contains the search1 CharSequence irrespective of
      * case or false if not or {@code null} string input
      * @since 3.0 Changed signature from containsIgnoreCase(String, String) to containsIgnoreCase(CharSequence, CharSequence)
      */
@@ -2048,7 +2048,7 @@ public class StringUtils {
      * character in the given set of characters.</p>
      *
      * <p>A {@code null} String will return {@code -1}.
-     * A {@code null} or zero length search array will return {@code -1}.</p>
+     * A {@code null} or zero length search1 array will return {@code -1}.</p>
      *
      * <pre>
      * StringUtils.indexOfAny(null, *)                = -1
@@ -2061,7 +2061,7 @@ public class StringUtils {
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
-     * @param searchChars  the chars to search for, may be null
+     * @param searchChars  the chars to search1 for, may be null
      * @return the index of any of the chars, -1 if no match or null input
      * @since 2.0
      * @since 3.0 Changed signature from indexOfAny(String, char[]) to indexOfAny(CharSequence, char...)
@@ -2097,7 +2097,7 @@ public class StringUtils {
      * character in the given set of characters.</p>
      *
      * <p>A {@code null} String will return {@code -1}.
-     * A {@code null} search string will return {@code -1}.</p>
+     * A {@code null} search1 string will return {@code -1}.</p>
      *
      * <pre>
      * StringUtils.indexOfAny(null, *)            = -1
@@ -2110,7 +2110,7 @@ public class StringUtils {
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
-     * @param searchChars  the chars to search for, may be null
+     * @param searchChars  the chars to search1 for, may be null
      * @return the index of any of the chars, -1 if no match or null input
      * @since 2.0
      * @since 3.0 Changed signature from indexOfAny(String, String) to indexOfAny(CharSequence, String)
@@ -2129,7 +2129,7 @@ public class StringUtils {
      * set of characters.</p>
      *
      * <p>A {@code null} CharSequence will return {@code false}.
-     * A {@code null} or zero length search array will return {@code false}.</p>
+     * A {@code null} or zero length search1 array will return {@code false}.</p>
      *
      * <pre>
      * StringUtils.containsAny(null, *)                = false
@@ -2143,7 +2143,7 @@ public class StringUtils {
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
-     * @param searchChars  the chars to search for, may be null
+     * @param searchChars  the chars to search1 for, may be null
      * @return the {@code true} if any of the chars are found,
      * {@code false} if no match or null input
      * @since 2.4
@@ -2185,7 +2185,7 @@ public class StringUtils {
      * </p>
      *
      * <p>
-     * A {@code null} CharSequence will return {@code false}. A {@code null} search CharSequence will return
+     * A {@code null} CharSequence will return {@code false}. A {@code null} search1 CharSequence will return
      * {@code false}.
      * </p>
      *
@@ -2205,7 +2205,7 @@ public class StringUtils {
      * @param cs
      *            the CharSequence to check, may be null
      * @param searchChars
-     *            the chars to search for, may be null
+     *            the chars to search1 for, may be null
      * @return the {@code true} if any of the chars are found, {@code false} if no match or null input
      * @since 2.4
      * @since 3.0 Changed signature from containsAny(String, String) to containsAny(CharSequence, CharSequence)
@@ -2222,7 +2222,7 @@ public class StringUtils {
      *
      * <p>
      * A {@code null} {@code cs} CharSequence will return {@code false}. A {@code null} or zero
-     * length search array will return {@code false}.
+     * length search1 array will return {@code false}.
      * </p>
      *
      * <pre>
@@ -2237,9 +2237,9 @@ public class StringUtils {
      *
      *
      * @param cs The CharSequence to check, may be null
-     * @param searchCharSequences The array of CharSequences to search for, may be null.
+     * @param searchCharSequences The array of CharSequences to search1 for, may be null.
      * Individual CharSequences may be null as well.
-     * @return {@code true} if any of the search CharSequences are found, {@code false} otherwise
+     * @return {@code true} if any of the search1 CharSequences are found, {@code false} otherwise
      * @since 3.4
      */
     public static boolean containsAny(final CharSequence cs, final CharSequence... searchCharSequences) {
@@ -2261,7 +2261,7 @@ public class StringUtils {
      * character not in the given set of characters.</p>
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
-     * A {@code null} or zero length search array will return {@code -1}.</p>
+     * A {@code null} or zero length search1 array will return {@code -1}.</p>
      *
      * <pre>
      * StringUtils.indexOfAnyBut(null, *)                              = -1
@@ -2275,7 +2275,7 @@ public class StringUtils {
      * </pre>
      *
      * @param cs  the CharSequence to check, may be null
-     * @param searchChars  the chars to search for, may be null
+     * @param searchChars  the chars to search1 for, may be null
      * @return the index of any of the chars, -1 if no match or null input
      * @since 2.0
      * @since 3.0 Changed signature from indexOfAnyBut(String, char[]) to indexOfAnyBut(CharSequence, char...)
@@ -2312,7 +2312,7 @@ public class StringUtils {
      * character not in the given set of characters.</p>
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
-     * A {@code null} or empty search string will return {@code -1}.</p>
+     * A {@code null} or empty search1 string will return {@code -1}.</p>
      *
      * <pre>
      * StringUtils.indexOfAnyBut(null, *)            = -1
@@ -2325,7 +2325,7 @@ public class StringUtils {
      * </pre>
      *
      * @param seq  the CharSequence to check, may be null
-     * @param searchChars  the chars to search for, may be null
+     * @param searchChars  the chars to search1 for, may be null
      * @return the index of any of the chars, -1 if no match or null input
      * @since 2.0
      * @since 3.0 Changed signature from indexOfAnyBut(String, String) to indexOfAnyBut(CharSequence, CharSequence)
@@ -2511,8 +2511,8 @@ public class StringUtils {
      * <p>Find the first index of any of a set of potential substrings.</p>
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
-     * A {@code null} or zero length search array will return {@code -1}.
-     * A {@code null} search array entry will be ignored, but a search
+     * A {@code null} or zero length search1 array will return {@code -1}.
+     * A {@code null} search1 array entry will be ignored, but a search1
      * array containing "" will return {@code 0} if {@code str} is not
      * null. This method uses {@link String#indexOf(String)} if possible.</p>
      *
@@ -2530,7 +2530,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the CharSequence to check, may be null
-     * @param searchStrs  the CharSequences to search for, may be null
+     * @param searchStrs  the CharSequences to search1 for, may be null
      * @return the first index of any of the searchStrs in str, -1 if no match
      * @since 3.0 Changed signature from indexOfAny(String, String[]) to indexOfAny(CharSequence, CharSequence...)
      */
@@ -2564,9 +2564,9 @@ public class StringUtils {
      * <p>Find the latest index of any of a set of potential substrings.</p>
      *
      * <p>A {@code null} CharSequence will return {@code -1}.
-     * A {@code null} search array will return {@code -1}.
-     * A {@code null} or zero length search array entry will be ignored,
-     * but a search array containing "" will return the length of {@code str}
+     * A {@code null} search1 array will return {@code -1}.
+     * A {@code null} or zero length search1 array entry will be ignored,
+     * but a search1 array containing "" will return the length of {@code str}
      * if {@code str} is not null. This method uses {@link String#indexOf(String)} if possible</p>
      *
      * <pre>
@@ -2582,7 +2582,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the CharSequence to check, may be null
-     * @param searchStrs  the CharSequences to search for, may be null
+     * @param searchStrs  the CharSequences to search1 for, may be null
      * @return the last index of any of the CharSequences, -1 if no match
      * @since 3.0 Changed signature from lastIndexOfAny(String, String[]) to lastIndexOfAny(CharSequence, CharSequence)
      */
@@ -2851,7 +2851,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the String to search for, may be null
+     * @param separator  the String to search1 for, may be null
      * @return the substring before the first occurrence of the separator,
      *  {@code null} if null String input
      * @since 2.0
@@ -2893,7 +2893,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the String to search for, may be null
+     * @param separator  the String to search1 for, may be null
      * @return the substring after the first occurrence of the separator,
      *  {@code null} if null String input
      * @since 2.0
@@ -2934,7 +2934,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the String to search for, may be null
+     * @param separator  the String to search1 for, may be null
      * @return the substring before the last occurrence of the separator,
      *  {@code null} if null String input
      * @since 2.0
@@ -2974,7 +2974,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  the String to get a substring from, may be null
-     * @param separator  the String to search for, may be null
+     * @param separator  the String to search1 for, may be null
      * @return the substring after the last occurrence of the separator,
      *  {@code null} if null String input
      * @since 2.0
@@ -3408,7 +3408,7 @@ public class StringUtils {
                         // the character at the position 'end'.
                         substrings.add(str.substring(beg, end));
 
-                        // Set the starting point for the next search.
+                        // Set the starting point for the next search1.
                         // The following is equivalent to beg = end + (separatorLength - 1) + 1,
                         // which is the right calculation:
                         beg = end + separatorLength;
@@ -4802,7 +4802,7 @@ public class StringUtils {
      *
      * <p>A {@code null} source string will return {@code null}.
      * An empty ("") source string will return the empty string.
-     * A {@code null} search string will return the source string.</p>
+     * A {@code null} search1 string will return the source string.</p>
      *
      * <pre>
      * StringUtils.removeStart(null, *)      = null
@@ -4814,8 +4814,8 @@ public class StringUtils {
      * StringUtils.removeStart("abc", "")    = "abc"
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the String to search for and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the String to search1 for and remove, may be null
      * @return the substring with the string removed if found,
      *  {@code null} if null String input
      * @since 2.1
@@ -4836,7 +4836,7 @@ public class StringUtils {
      *
      * <p>A {@code null} source string will return {@code null}.
      * An empty ("") source string will return the empty string.
-     * A {@code null} search string will return the source string.</p>
+     * A {@code null} search1 string will return the source string.</p>
      *
      * <pre>
      * StringUtils.removeStartIgnoreCase(null, *)      = null
@@ -4849,8 +4849,8 @@ public class StringUtils {
      * StringUtils.removeStartIgnoreCase("abc", "")    = "abc"
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the String to search for (case insensitive) and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the String to search1 for (case insensitive) and remove, may be null
      * @return the substring with the string removed if found,
      *  {@code null} if null String input
      * @since 2.4
@@ -4871,7 +4871,7 @@ public class StringUtils {
      *
      * <p>A {@code null} source string will return {@code null}.
      * An empty ("") source string will return the empty string.
-     * A {@code null} search string will return the source string.</p>
+     * A {@code null} search1 string will return the source string.</p>
      *
      * <pre>
      * StringUtils.removeEnd(null, *)      = null
@@ -4883,8 +4883,8 @@ public class StringUtils {
      * StringUtils.removeEnd("abc", "")    = "abc"
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the String to search for and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the String to search1 for and remove, may be null
      * @return the substring with the string removed if found,
      *  {@code null} if null String input
      * @since 2.1
@@ -4905,7 +4905,7 @@ public class StringUtils {
      *
      * <p>A {@code null} source string will return {@code null}.
      * An empty ("") source string will return the empty string.
-     * A {@code null} search string will return the source string.</p>
+     * A {@code null} search1 string will return the source string.</p>
      *
      * <pre>
      * StringUtils.removeEndIgnoreCase(null, *)      = null
@@ -4919,8 +4919,8 @@ public class StringUtils {
      * StringUtils.removeEndIgnoreCase("www.domain.COM", ".com") = "www.domain")
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the String to search for (case insensitive) and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the String to search1 for (case insensitive) and remove, may be null
      * @return the substring with the string removed if found,
      *  {@code null} if null String input
      * @since 2.4
@@ -4952,8 +4952,8 @@ public class StringUtils {
      * StringUtils.remove("queued", "zz") = "queued"
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the String to search for and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the String to search1 for and remove, may be null
      * @return the substring with the string removed if found,
      *  {@code null} if null String input
      * @since 2.1
@@ -4990,9 +4990,9 @@ public class StringUtils {
      * </pre>
      *
      * @param str
-     *            the source String to search, may be null
+     *            the source String to search1, may be null
      * @param remove
-     *            the String to search for (case insensitive) and remove, may be
+     *            the String to search1 for (case insensitive) and remove, may be
      *            null
      * @return the substring with the string removed if found, {@code null} if
      *         null String input
@@ -5018,8 +5018,8 @@ public class StringUtils {
      * StringUtils.remove("queued", 'z') = "queued"
      * </pre>
      *
-     * @param str  the source String to search, may be null
-     * @param remove  the char to search for and remove, may be null
+     * @param str  the source String to search1, may be null
+     * @param remove  the char to search1 for and remove, may be null
      * @return the substring with the char removed if found,
      *  {@code null} if null String input
      * @since 2.1
@@ -5150,8 +5150,8 @@ public class StringUtils {
      * </pre>
      *
      * @see #replace(String text, String searchString, String replacement, int max)
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for, may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for, may be null
      * @param replacement  the String to replace with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
@@ -5178,8 +5178,8 @@ public class StringUtils {
      * </pre>
      *
      * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for (case insensitive), may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for (case insensitive), may be null
      * @param replacement  the String to replace with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
@@ -5302,7 +5302,7 @@ public class StringUtils {
      * StringUtils.replaceAll("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2")  = "Lorem_ipsum_dolor_sit"
      * </pre>
      *
-     * @param text  text to search and replace in, may be null
+     * @param text  text to search1 and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for each match
      * @return  the text with any replacements processed,
@@ -5356,7 +5356,7 @@ public class StringUtils {
      * StringUtils.replaceFirst("Lorem ipsum  dolor   sit", "( +)([a-z]+)", "_$2")  = "Lorem_ipsum  dolor   sit"
      * </pre>
      *
-     * @param text  text to search and replace in, may be null
+     * @param text  text to search1 and replace in, may be null
      * @param regex  the regular expression to which this string is to be matched
      * @param replacement  the string to be substituted for the first match
      * @return  the text with the first replacement processed,
@@ -5394,8 +5394,8 @@ public class StringUtils {
      * </pre>
      *
      * @see #replace(String text, String searchString, String replacement, int max)
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for, may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for, may be null
      * @param replacement  the String to replace it with, may be null
      * @return the text with any replacements processed,
      *  {@code null} if null String input
@@ -5421,8 +5421,8 @@ public class StringUtils {
     * </pre>
     *
     * @see #replaceIgnoreCase(String text, String searchString, String replacement, int max)
-    * @param text  text to search and replace in, may be null
-    * @param searchString  the String to search for (case insensitive), may be null
+    * @param text  text to search1 and replace in, may be null
+    * @param searchString  the String to search1 for (case insensitive), may be null
     * @param replacement  the String to replace it with, may be null
     * @return the text with any replacements processed,
     *  {@code null} if null String input
@@ -5434,7 +5434,7 @@ public class StringUtils {
 
     /**
      * <p>Replaces a String with another String inside a larger String,
-     * for the first {@code max} values of the search String.</p>
+     * for the first {@code max} values of the search1 String.</p>
      *
      * <p>A {@code null} reference passed to this method is a no-op.</p>
      *
@@ -5453,8 +5453,8 @@ public class StringUtils {
      * StringUtils.replace("abaa", "a", "z", -1)  = "zbzz"
      * </pre>
      *
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for, may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for, may be null
      * @param replacement  the String to replace it with, may be null
      * @param max  maximum number of values to replace, or {@code -1} if no maximum
      * @return the text with any replacements processed,
@@ -5466,7 +5466,7 @@ public class StringUtils {
 
     /**
      * <p>Replaces a String with another String inside a larger String,
-     * for the first {@code max} values of the search String,
+     * for the first {@code max} values of the search1 String,
      * case sensitively/insensisitively based on {@code ignoreCase} value.</p>
      *
      * <p>A {@code null} reference passed to this method is a no-op.</p>
@@ -5487,8 +5487,8 @@ public class StringUtils {
      * StringUtils.replace("abAa", "a", "z", -1, true)  = "zbzz"
      * </pre>
      *
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for (case insensitive), may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for (case insensitive), may be null
      * @param replacement  the String to replace it with, may be null
      * @param max  maximum number of values to replace, or {@code -1} if no maximum
      * @param ignoreCase if true replace is case insensitive, otherwise case sensitive
@@ -5528,7 +5528,7 @@ public class StringUtils {
 
     /**
      * <p>Case insensitively replaces a String with another String inside a larger String,
-     * for the first {@code max} values of the search String.</p>
+     * for the first {@code max} values of the search1 String.</p>
      *
      * <p>A {@code null} reference passed to this method is a no-op.</p>
      *
@@ -5547,8 +5547,8 @@ public class StringUtils {
      * StringUtils.replaceIgnoreCase("abAa", "a", "z", -1)  = "zbzz"
      * </pre>
      *
-     * @param text  text to search and replace in, may be null
-     * @param searchString  the String to search for (case insensitive), may be null
+     * @param text  text to search1 and replace in, may be null
+     * @param searchString  the String to search1 for (case insensitive), may be null
      * @param replacement  the String to replace it with, may be null
      * @param max  maximum number of values to replace, or {@code -1} if no maximum
      * @return the text with any replacements processed,
@@ -5566,7 +5566,7 @@ public class StringUtils {
      *
      * <p>
      * A {@code null} reference passed to this method is a no-op, or if
-     * any "search string" or "string to replace" is null, that replace will be
+     * any "search1 string" or "string to replace" is null, that replace will be
      * ignored. This will not repeat. For repeating replaces, call the
      * overloaded method.
      * </p>
@@ -5586,9 +5586,9 @@ public class StringUtils {
      * </pre>
      *
      * @param text
-     *            text to search and replace in, no-op if null
+     *            text to search1 and replace in, no-op if null
      * @param searchList
-     *            the Strings to search for, no-op if null
+     *            the Strings to search1 for, no-op if null
      * @param replacementList
      *            the Strings to replace them with, no-op if null
      * @return the text with any replacements processed, {@code null} if
@@ -5609,7 +5609,7 @@ public class StringUtils {
      *
      * <p>
      * A {@code null} reference passed to this method is a no-op, or if
-     * any "search string" or "string to replace" is null, that replace will be
+     * any "search1 string" or "string to replace" is null, that replace will be
      * ignored.
      * </p>
      *
@@ -5629,15 +5629,15 @@ public class StringUtils {
      * </pre>
      *
      * @param text
-     *            text to search and replace in, no-op if null
+     *            text to search1 and replace in, no-op if null
      * @param searchList
-     *            the Strings to search for, no-op if null
+     *            the Strings to search1 for, no-op if null
      * @param replacementList
      *            the Strings to replace them with, no-op if null
      * @return the text with any replacements processed, {@code null} if
      *         null String input
      * @throws IllegalStateException
-     *             if the search is repeating and there is an endless loop due
+     *             if the search1 is repeating and there is an endless loop due
      *             to outputs of one being inputs to another
      * @throws IllegalArgumentException
      *             if the lengths of the arrays are not the same (null is ok,
@@ -5660,7 +5660,7 @@ public class StringUtils {
      *
      * <p>
      * A {@code null} reference passed to this method is a no-op, or if
-     * any "search string" or "string to replace" is null, that replace will be
+     * any "search1 string" or "string to replace" is null, that replace will be
      * ignored.
      * </p>
      *
@@ -5681,9 +5681,9 @@ public class StringUtils {
      * </pre>
      *
      * @param text
-     *            text to search and replace in, no-op if null
+     *            text to search1 and replace in, no-op if null
      * @param searchList
-     *            the Strings to search for, no-op if null
+     *            the Strings to search1 for, no-op if null
      * @param replacementList
      *            the Strings to replace them with, no-op if null
      * @param repeat if true, then replace repeatedly
@@ -5694,7 +5694,7 @@ public class StringUtils {
      * @return the text with any replacements processed, {@code null} if
      *         null String input
      * @throws IllegalStateException
-     *             if the search is repeating and there is an endless loop due
+     *             if the search1 is repeating and there is an endless loop due
      *             to outputs of one being inputs to another
      * @throws IllegalArgumentException
      *             if the lengths of the arrays are not the same (null is ok,
@@ -5737,7 +5737,7 @@ public class StringUtils {
         int replaceIndex = -1;
         int tempIndex = -1;
 
-        // index of replace array that will replace the search string found
+        // index of replace array that will replace the search1 string found
         // NOTE: logic duplicated below START
         for (int i = 0; i < searchLength; i++) {
             if (noMoreMatchesForReplIndex[i] || searchList[i] == null ||
@@ -5758,7 +5758,7 @@ public class StringUtils {
         }
         // NOTE: logic mostly below END
 
-        // no search strings found, we are done
+        // no search1 strings found, we are done
         if (textIndex == -1) {
             return text;
         }
@@ -5846,7 +5846,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  String to replace characters in, may be null
-     * @param searchChar  the character to search for, may be null
+     * @param searchChar  the character to search1 for, may be null
      * @param replaceChar  the character to replace, may be null
      * @return modified String, {@code null} if null string input
      * @since 2.0
@@ -5867,13 +5867,13 @@ public class StringUtils {
      *
      * <p>A {@code null} string input returns {@code null}.
      * An empty ("") string input returns an empty string.
-     * A null or empty set of search characters returns the input string.</p>
+     * A null or empty set of search1 characters returns the input string.</p>
      *
-     * <p>The length of the search characters should normally equal the length
+     * <p>The length of the search1 characters should normally equal the length
      * of the replace characters.
-     * If the search characters is longer, then the extra search characters
+     * If the search1 characters is longer, then the extra search1 characters
      * are deleted.
-     * If the search characters is shorter, then the extra replace characters
+     * If the search1 characters is shorter, then the extra replace characters
      * are ignored.</p>
      *
      * <pre>
@@ -5889,7 +5889,7 @@ public class StringUtils {
      * </pre>
      *
      * @param str  String to replace characters in, may be null
-     * @param searchChars  a set of characters to search for, may be null
+     * @param searchChars  a set of characters to search1 for, may be null
      * @param replaceChars  a set of characters to replace, may be null
      * @return modified String, {@code null} if null string input
      * @since 2.0

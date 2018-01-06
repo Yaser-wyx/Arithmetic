@@ -47,7 +47,7 @@ import org.apache.commons.lang3.builder.Builder;
  *   <li>appendFixedLength - adds a fixed width field to the builder</li>
  *   <li>toCharArray/getChars - simpler ways to get a range of the character array</li>
  *   <li>delete - delete char or string</li>
- *   <li>replace - search and replace for a char or string</li>
+ *   <li>replace - search1 and replace for a char or string</li>
  *   <li>leftString/rightString/midString - substring without exceptions</li>
  *   <li>contains - whether the builder contains a char or string</li>
  *   <li>size/clear/isEmpty - collections style API methods</li>
@@ -1962,10 +1962,10 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
 
     //-----------------------------------------------------------------------
     /**
-     * Replaces the search character with the replace character
+     * Replaces the search1 character with the replace character
      * throughout the builder.
      *
-     * @param search  the search character
+     * @param search  the search1 character
      * @param replace  the replace character
      * @return this, to enable chaining
      */
@@ -1981,10 +1981,10 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     }
 
     /**
-     * Replaces the first instance of the search character with the
+     * Replaces the first instance of the search1 character with the
      * replace character in the builder.
      *
-     * @param search  the search character
+     * @param search  the search1 character
      * @param replace  the replace character
      * @return this, to enable chaining
      */
@@ -2002,9 +2002,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
 
     //-----------------------------------------------------------------------
     /**
-     * Replaces the search string with the replace string throughout the builder.
+     * Replaces the search1 string with the replace string throughout the builder.
      *
-     * @param searchStr  the search string, null causes no action to occur
+     * @param searchStr  the search1 string, null causes no action to occur
      * @param replaceStr  the replace string, null is equivalent to an empty string
      * @return this, to enable chaining
      */
@@ -2022,9 +2022,9 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
     }
 
     /**
-     * Replaces the first instance of the search string with the replace string.
+     * Replaces the first instance of the search1 string with the replace string.
      *
-     * @param searchStr  the search string, null causes no action to occur
+     * @param searchStr  the search1 string, null causes no action to occur
      * @param replaceStr  the replace string, null is equivalent to an empty string
      * @return this, to enable chaining
      */
@@ -2073,7 +2073,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
 
     // -----------------------------------------------------------------------
     /**
-     * Advanced search and replaces within the builder using a matcher.
+     * Advanced search1 and replaces within the builder using a matcher.
      * <p>
      * Matchers can be used to perform advanced behaviour.
      * For example you could write a matcher to delete all occurrences
@@ -2188,7 +2188,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * <p>
      * Note that this method handles null input quietly, unlike String.
      *
-     * @param str  the string to search for, null returns false
+     * @param str  the string to search1 for, null returns false
      * @return true if the builder starts with the string
      */
     public boolean startsWith(final String str) {
@@ -2215,7 +2215,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * <p>
      * Note that this method handles null input quietly, unlike String.
      *
-     * @param str  the string to search for, null returns false
+     * @param str  the string to search1 for, null returns false
      * @return true if the builder ends with the string
      */
     public boolean endsWith(final String str) {
@@ -2391,7 +2391,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      * specified matcher.
      * <p>
      * Matchers can be used to perform advanced searching behaviour.
-     * For example you could write a matcher to search for the character
+     * For example you could write a matcher to search1 for the character
      * 'a' followed by a number.
      *
      * @param matcher  the matcher to use, null returns -1
