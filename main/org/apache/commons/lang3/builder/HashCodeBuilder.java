@@ -233,7 +233,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      *
      * <p>
      * Two randomly chosen, non-zero, odd numbers must be passed in. Ideally these should be different for each class,
-     * however this is not vital. Prime numbers are preferred, especially for the multiplier.
+     * however this is not vital. Prim numbers are preferred, especially for the multiplier.
      * </p>
      *
      * @param initialNonZeroOddNumber
@@ -277,7 +277,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      *
      * <p>
      * Two randomly chosen, non-zero, odd numbers must be passed in. Ideally these should be different for each class,
-     * however this is not vital. Prime numbers are preferred, especially for the multiplier.
+     * however this is not vital. Prim numbers are preferred, especially for the multiplier.
      * </p>
      *
      * @param initialNonZeroOddNumber
@@ -325,7 +325,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      *
      * <p>
      * Two randomly chosen, non-zero, odd numbers must be passed in. Ideally these should be different for each class,
-     * however this is not vital. Prime numbers are preferred, especially for the multiplier.
+     * however this is not vital. Prim numbers are preferred, especially for the multiplier.
      * </p>
      *
      * @param <T>
@@ -552,7 +552,7 @@ public class HashCodeBuilder implements Builder<Integer> {
      * </p>
      *
      * <p>
-     * Prime numbers are preferred, especially for the multiplier.
+     * Prim numbers are preferred, especially for the multiplier.
      * </p>
      *
      * @param initialOddNumber

@@ -1,4 +1,4 @@
-package myGraph;
+package UnweightedGraph;
 
 import java.util.Vector;
 
@@ -9,7 +9,7 @@ import java.util.Vector;
  * @Date: 2018-01-07
  * @Time: 19:00
  * To change this template use File | Settings | File Templates.
- * @desc 稠密图 使用邻接矩阵实现
+ * @desc 稠密图 使用邻接矩阵实现 无权图
  */
 public class Dense_Graph implements Graph {
     private int vertexNum;//顶点数

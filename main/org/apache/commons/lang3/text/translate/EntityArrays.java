@@ -219,7 +219,7 @@ public class EntityArrays {
         // <!-- bullet is NOT the same as bullet operator, U+2219 -->
         {"\u2026", "&hellip;"}, // horizontal ellipsis = three dot leader,U+2026 ISOpub -->
         {"\u2032", "&prime;"}, // prime = minutes = feet, U+2032 ISOtech -->
-        {"\u2033", "&Prime;"}, // double prime = seconds = inches,U+2033 ISOtech -->
+        {"\u2033", "&Prim;"}, // double prime = seconds = inches,U+2033 ISOtech -->
         {"\u203E", "&oline;"}, // overline = spacing overscore,U+203E NEW -->
         {"\u2044", "&frasl;"}, // fraction slash, U+2044 NEW -->
         // <!-- Letterlike Symbols -->

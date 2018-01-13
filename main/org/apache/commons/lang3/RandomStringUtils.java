@@ -180,7 +180,7 @@ public class RandomStringUtils {
      * <p>Creates a random string whose length is between the inclusive minimum and
      * the exclusive maximum.</p>
      *
-     * <p>Characters will be chosen from the set of \p{Graph} characters.</p>
+     * <p>Characters will be chosen from the set of \p{WeightGraph} characters.</p>
      *
      * @param minLengthInclusive the inclusive minimum length of the string to generate
      * @param maxLengthExclusive the exclusive maximum length of the string to generate

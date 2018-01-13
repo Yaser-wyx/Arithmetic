@@ -1,4 +1,4 @@
-package myGraph;
+package UnweightedGraph;
 
 public interface Graph {
     int getVertexNum();

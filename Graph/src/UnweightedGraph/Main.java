@@ -1,4 +1,4 @@
-package myGraph;
+package UnweightedGraph;
 
 
 /**
@@ -12,7 +12,7 @@ package myGraph;
  */
 public class Main {
     public static void main(String[] args) {
-        String filename = "F:\\Workspace\\Arithmetic\\Graph\\src\\myGraph\\test2.txt";
+        String filename = "F:\\Workspace\\Arithmetic\\Graph\\src\\UnweightedGraph\\test2.txt";
         Sparse_Graph sparse_graph = new Sparse_Graph(13, false);
         ReadGraph readGraph = new ReadGraph(sparse_graph, filename);
         Path path = new Path(sparse_graph);
@@ -33,7 +33,7 @@ public class Main {
     }
 
     void test1() {
-        String filename = "F:\\Workspace\\Arithmetic\\Graph\\src\\myGraph\\test1.txt";
+        String filename = "F:\\Workspace\\Arithmetic\\WeightGraph\\src\\UnweightedGraph\\test1.txt";
         Sparse_Graph sparse_graph = new Sparse_Graph(13, false);
         ReadGraph readGraph = new ReadGraph(sparse_graph, filename);
         System.out.println("test1 in sparse_graph:");

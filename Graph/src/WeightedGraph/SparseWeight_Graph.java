@@ -1,4 +1,4 @@
-package myGraph;
+package WeightedGraph;
 
 import java.util.Vector;
 
@@ -9,15 +9,15 @@ import java.util.Vector;
  * @Date: 2018-01-07
  * @Time: 18:59
  * To change this template use File | Settings | File Templates.
- * @desc 稀疏图 使用邻接表来实现
+ * @desc 稀疏图 使用邻接表来实现 有权图
  */
-public class Sparse_Graph implements Graph {
+public class SparseWeight_Graph<Weight extends Number & Comparable> implements WeightGraph {
     private int vertexNum;//顶点数
     private int edgeNum;//边数
     private boolean directed;//是否是有向图
-    private Vector<Integer>[] g;//使用邻接表存储图
+    private Vector<Edge<Weight>>[] g;//使用邻接表存储图
 
-    public Sparse_Graph(int vertexNum, boolean directed) {//初始化邻接表
+    public SparseWeight_Graph(int vertexNum, boolean directed) {//初始化邻接表
         this.vertexNum = vertexNum;
         this.directed = directed;
         this.edgeNum = 0;
@@ -35,31 +35,31 @@ public class Sparse_Graph implements Graph {
         return edgeNum;
     }
 
-    public void addEdge(int v, int w) {//添加边
-        assert v >= 0 && v < vertexNum;
-        assert w >= 0 && w < vertexNum;
+    @Override
+    public void addEdge(Edge edge) {
+        assert edge.getW() >= 0 && edge.getW() < vertexNum;
+        assert edge.getV() >= 0 && edge.getV() < vertexNum;
 
-        if (!hasEdge(v, w)) {//如果边存在则不添加
-            g[v].add(w);
-            if (!directed && v != w) {//如果是无向图
-                g[w].add(v);
-            }
-            edgeNum++;
+        g[edge.getV()].add(new Edge(edge));
+        if (!directed && edge.getW() != edge.getV()) {
+            g[edge.getW()].add(new Edge(edge.getW(), edge.getV(), edge.getWeight()));
         }
+        edgeNum++;
 
     }
+
 
     @Override
     public boolean hasEdge(int v, int w) {
         for (int i = 0; i < g[v].size(); i++) {
-            if (g[v].elementAt(i) == w) {
+            if (g[v].elementAt(i).other(v) == w) {
                 return true;
             }
         }
         return false;
     }
 
-    public Iterable<Integer> adj(int v) {//返回v相邻节点的迭代器
+    public Iterable<Edge<Weight>> adj(int v) {//返回v相邻节点边的迭代器
         assert v >= 0 && v < vertexNum;
         return g[v];//直接返回v这个链表即可。
     }

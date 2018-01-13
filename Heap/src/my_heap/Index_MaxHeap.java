@@ -34,6 +34,10 @@ public class Index_MaxHeap<T extends Comparable> {
         shift_up(count);
     }
 
+    public void insert(T item) {
+        insert(count - 1, item);//插入到尾部
+    }
+
     private void shift_up(int index) {//index是在indexs里面的索引，indexes[index]是指data里面的索引
         while (index > 1 && data[indexes[index / 2]].compareTo(data[indexes[index]]) < 0) {//如果父节点小于子节点
             //交换二个索引的位置
@@ -128,10 +132,10 @@ public class Index_MaxHeap<T extends Comparable> {
                 indexes[index] = cache;
                 reverse[indexes[index]] = index;
                 reverse[indexes[bigger]] = bigger;
+                index = bigger;
             } else {
                 break;
             }
-
 
         }
 

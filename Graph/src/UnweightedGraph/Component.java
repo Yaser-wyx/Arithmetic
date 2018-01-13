@@ -1,4 +1,4 @@
-package myGraph;
+package UnweightedGraph;
 
 import java.util.Arrays;
 

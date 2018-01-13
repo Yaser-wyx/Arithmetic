@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Tree/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Union_Find/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graph/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Minimum-Span-Trees/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ShortestPath/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
