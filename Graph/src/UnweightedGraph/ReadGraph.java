@@ -13,10 +13,10 @@ import java.util.Scanner;
  * To change this template use File | Settings | File Templates.
  * @desc graph的辅助类
  */
-public class ReadGraph {
+public class    ReadGraph {
     private Scanner scanner;
 
-    public ReadGraph(Graph graph, String filename) {
+    public ReadGraph(Graph graph, String filename)  {
         readfile(filename);
         int VertexNum = scanner.nextInt();
         if (VertexNum < 0) {

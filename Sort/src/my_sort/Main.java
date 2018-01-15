@@ -16,5 +16,6 @@ public class Main {
         Sort[] sorts = {new HeapSort(), new Quick_sort2(), new Merge_Sort(), new HeapSort2()};
         Util util = new Util(sorts, 10, 1000000);
         util.Start();
+
     }
 }
