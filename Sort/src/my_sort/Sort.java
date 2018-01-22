@@ -1,6 +1,6 @@
 package my_sort;
 
-public class Sort {
+public class Sort implements Runnable{
     String getName() {
         return "sort";
     }
@@ -10,5 +10,10 @@ public class Sort {
 
     long GetStart() {
         return System.currentTimeMillis();
+    }
+
+    @Override
+    public void run() {
+
     }
 }

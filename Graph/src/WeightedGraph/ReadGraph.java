@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class ReadGraph<Weight extends Number & Comparable> {
     private Scanner scanner;
 
-    public ReadGraph(WeightGraph<?> graph, String filename) {
+    public ReadGraph(WeightGraph<Weight> graph, String filename) {
         readfile(filename);
         int VertexNum = scanner.nextInt();
         if (VertexNum < 0) {

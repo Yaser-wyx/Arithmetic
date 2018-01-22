@@ -13,7 +13,7 @@ import org.apache.commons.lang3.RandomUtils;
  * @desc 快速排序
  */
 public class Quick_Sort {
-    void sort(int[] nums) {
+    public void sort(int[] nums) {
         quick_sort(nums, 0, nums.length - 1);
     }
 

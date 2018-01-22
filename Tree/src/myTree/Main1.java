@@ -12,7 +12,7 @@ import org.apache.commons.lang3.RandomUtils;
  * To change this template use File | Settings | File Templates.
  * @desc
  */
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         BST<Integer, Integer> bst = new BST<>();
         int size = 100;

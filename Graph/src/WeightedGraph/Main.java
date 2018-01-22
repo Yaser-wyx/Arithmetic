@@ -15,16 +15,12 @@ import MST.Prim;
  */
 public class Main {
     public static void main(String[] args) {
-        SparseWeight_Graph<Double> sparseWeight_graph = new SparseWeight_Graph<>(6, false);
-        String file = "F:\\Workspace\\Arithmetic\\Graph\\src\\WeightedGraph\\test3.txt";
+        SparseWeight_Graph<Double> sparseWeight_graph = new SparseWeight_Graph<>(10000, false);
+        String file = "F:\\Workspace\\Arithmetic\\Graph\\src\\WeightedGraph\\test1.txt";
         ReadGraph<Double> readGraph = new ReadGraph(sparseWeight_graph, file);
 
         LazyPrim<Double> lazyPrim = new LazyPrim<>(sparseWeight_graph);
         System.out.println(lazyPrim.getWeight());
-        for (Edge<Double> edge : lazyPrim.getMst()) {
-            System.out.println(edge);
-
-        }
 
         Prim<Double> prim = new Prim<>(sparseWeight_graph);
         System.out.println(prim.getWeight());

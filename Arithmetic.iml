@@ -13,6 +13,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Minimum-Span-Trees/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ShortestPath/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Review/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Match/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Match/第一次模拟赛" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DoubleLink/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
