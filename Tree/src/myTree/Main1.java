@@ -1,6 +1,6 @@
 package myTree;
 
-import my_sort.Quick_Sort;
+
 import org.apache.commons.lang3.RandomUtils;
 
 /**
@@ -12,17 +12,21 @@ import org.apache.commons.lang3.RandomUtils;
  * To change this template use File | Settings | File Templates.
  * @desc
  */
+
 public class Main1 {
     public static void main(String[] args) {
-        BST<Integer, Integer> bst = new BST<>();
-        int size = 100;
-        for (int i = 0; i < size; i++) {
-            bst.insert(RandomUtils.nextInt(0, 100),i );
+        int n = 100;
+        int num[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            num[i] = RandomUtils.nextInt(0, 1000);
         }
-        System.out.println(bst.search(10));
-        bst.remove(10);
-        System.out.println("--------------------------");
-        bst.inOrder();
-
+        ZKW zkw = new ZKW(n, num);
+        int l = 13, r = 48;
+        System.out.println(zkw.query(l, r));
+        int ans = 0;
+        for (int i = l; i <= r; i++) {
+            ans += num[i - 1];
+        }
+        System.out.println(ans);
     }
 }

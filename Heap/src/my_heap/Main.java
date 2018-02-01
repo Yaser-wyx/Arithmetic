@@ -1,6 +1,6 @@
 package my_heap;
 
-import org.apache.commons.lang3.RandomUtils;
+import java.io.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,17 +12,20 @@ import org.apache.commons.lang3.RandomUtils;
  * @desc
  */
 public class Main {
-    public static void main(String[] args) {
-        int nums = 10;
-        MaxHeap<Integer> heap = new MaxHeap<>(nums);
-        for (int i = 0; i < nums; i++) {
-            heap.insert(RandomUtils.nextInt(0, 1230));
+    public static void main(String[] args) throws IOException {
+        int a, b;
+        StreamTokenizer in = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+
+        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+
+        //while (in.nextToken() != StreamTokenizer.TT_EOF)
+        // in.nextToken()读下一个标记，StreamTokenizer.TT_EOF是个参数EOF
+        {
+            a = (int) in.nval;
+            in.nextToken();
+            b = (int) in.nval;
+            out.println(a + b);
         }
-        System.out.println("-------------------------");
-        System.out.println(heap.extractMax());
-        System.out.println("-------------------------");
-
+        out.flush();// 刷新缓冲区，否则a+b会留在缓冲区
     }
-
-
 }

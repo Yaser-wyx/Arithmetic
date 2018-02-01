@@ -583,7 +583,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     //-------------------------------------------------------------------------
 
     /**
-     * <p>Test if two <code>Object</code>s are equal using either
+     * <p>MyList.Test if two <code>Object</code>s are equal using either
      * #{@link #reflectionAppend(Object, Object)}, if object are non
      * primitives (or wrapper of primitives) or if field <code>testRecursive</code>
      * is set to <code>false</code>. Otherwise, using their
@@ -621,7 +621,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if an <code>Object</code> is equal to an array.</p>
+     * <p>MyList.Test if an <code>Object</code> is equal to an array.</p>
      *
      * @param lhs  the left hand object, an array
      * @param rhs  the right hand object
@@ -656,7 +656,7 @@ public class EqualsBuilder implements Builder<Boolean> {
 
     /**
      * <p>
-     * Test if two <code>long</code> s are equal.
+     * MyList.Test if two <code>long</code> s are equal.
      * </p>
      *
      * @param lhs
@@ -674,7 +674,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>int</code>s are equal.</p>
+     * <p>MyList.Test if two <code>int</code>s are equal.</p>
      *
      * @param lhs  the left hand <code>int</code>
      * @param rhs  the right hand <code>int</code>
@@ -689,7 +689,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>short</code>s are equal.</p>
+     * <p>MyList.Test if two <code>short</code>s are equal.</p>
      *
      * @param lhs  the left hand <code>short</code>
      * @param rhs  the right hand <code>short</code>
@@ -704,7 +704,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>char</code>s are equal.</p>
+     * <p>MyList.Test if two <code>char</code>s are equal.</p>
      *
      * @param lhs  the left hand <code>char</code>
      * @param rhs  the right hand <code>char</code>
@@ -719,7 +719,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>byte</code>s are equal.</p>
+     * <p>MyList.Test if two <code>byte</code>s are equal.</p>
      *
      * @param lhs  the left hand <code>byte</code>
      * @param rhs  the right hand <code>byte</code>
@@ -734,7 +734,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>double</code>s are equal by testing that the
+     * <p>MyList.Test if two <code>double</code>s are equal by testing that the
      * pattern of bits returned by <code>doubleToLong</code> are equal.</p>
      *
      * <p>This handles NaNs, Infinities, and <code>-0.0</code>.</p>
@@ -754,7 +754,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>float</code>s are equal byt testing that the
+     * <p>MyList.Test if two <code>float</code>s are equal byt testing that the
      * pattern of bits returned by doubleToLong are equal.</p>
      *
      * <p>This handles NaNs, Infinities, and <code>-0.0</code>.</p>
@@ -774,7 +774,7 @@ public class EqualsBuilder implements Builder<Boolean> {
     }
 
     /**
-     * <p>Test if two <code>booleans</code>s are equal.</p>
+     * <p>MyList.Test if two <code>booleans</code>s are equal.</p>
      *
      * @param lhs  the left hand <code>boolean</code>
      * @param rhs  the right hand <code>boolean</code>

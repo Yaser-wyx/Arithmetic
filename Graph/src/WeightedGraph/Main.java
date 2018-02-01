@@ -11,7 +11,7 @@ import MST.Prim;
  * @Date: 2018-01-09
  * @Time: 17:31
  * To change this template use File | Settings | File Templates.
- * @desc Test
+ * @desc MyList.Test
  */
 public class Main {
     public static void main(String[] args) {

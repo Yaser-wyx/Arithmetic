@@ -149,7 +149,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code boolean}s are equal.
+     * MyList.Test if two {@code boolean}s are equal.
      * </p>
      *
      * @param fieldName
@@ -189,7 +189,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code boolean[]}s are equal.
+     * MyList.Test if two {@code boolean[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -228,7 +228,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code byte}s are equal.
+     * MyList.Test if two {@code byte}s are equal.
      * </p>
      *
      * @param fieldName
@@ -267,7 +267,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code byte[]}s are equal.
+     * MyList.Test if two {@code byte[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -307,7 +307,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code char}s are equal.
+     * MyList.Test if two {@code char}s are equal.
      * </p>
      *
      * @param fieldName
@@ -347,7 +347,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code char[]}s are equal.
+     * MyList.Test if two {@code char[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -387,7 +387,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code double}s are equal.
+     * MyList.Test if two {@code double}s are equal.
      * </p>
      *
      * @param fieldName
@@ -427,7 +427,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code double[]}s are equal.
+     * MyList.Test if two {@code double[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -467,7 +467,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code float}s are equal.
+     * MyList.Test if two {@code float}s are equal.
      * </p>
      *
      * @param fieldName
@@ -507,7 +507,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code float[]}s are equal.
+     * MyList.Test if two {@code float[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -547,7 +547,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code int}s are equal.
+     * MyList.Test if two {@code int}s are equal.
      * </p>
      *
      * @param fieldName
@@ -587,7 +587,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code int[]}s are equal.
+     * MyList.Test if two {@code int[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -627,7 +627,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code long}s are equal.
+     * MyList.Test if two {@code long}s are equal.
      * </p>
      *
      * @param fieldName
@@ -667,7 +667,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code long[]}s are equal.
+     * MyList.Test if two {@code long[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -707,7 +707,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code short}s are equal.
+     * MyList.Test if two {@code short}s are equal.
      * </p>
      *
      * @param fieldName
@@ -747,7 +747,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code short[]}s are equal.
+     * MyList.Test if two {@code short[]}s are equal.
      * </p>
      *
      * @param fieldName
@@ -787,7 +787,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code Objects}s are equal.
+     * MyList.Test if two {@code Objects}s are equal.
      * </p>
      *
      * @param fieldName
@@ -871,7 +871,7 @@ public class DiffBuilder implements Builder<DiffResult> {
 
     /**
      * <p>
-     * Test if two {@code Object[]}s are equal.
+     * MyList.Test if two {@code Object[]}s are equal.
      * </p>
      *
      * @param fieldName

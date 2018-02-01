@@ -16,6 +16,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Match/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Match/第一次模拟赛" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DoubleLink/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/List/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Problem/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
