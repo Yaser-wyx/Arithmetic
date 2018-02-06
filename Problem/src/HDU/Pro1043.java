@@ -1,7 +1,10 @@
 package HDU;
 
-import java.io.BufferedInputStream;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,13 +42,14 @@ public class Pro1043 {
 
         path[cantor] = "lr";//初始状态
         visited = new boolean[363000];//用于判重
-        node node = new node(num, new StringBuffer(""), cantor, 8);
+        node2 node = new node2(num, new StringBuffer(""), cantor, 8);
         BFS(node);
     }
 
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(new BufferedInputStream(System.in));
+    public static void main(String[] args) throws FileNotFoundException {
+        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
+        Scanner in = new Scanner(file);
         create();//进行打表
 
         while (in.hasNext()) {
@@ -64,11 +68,11 @@ public class Pro1043 {
         }
     }
 
-    private static void BFS(node temp) {
-        Queue<node> queue = new LinkedList<>();
+    private static void BFS(node2 temp) {
+        Queue<node2> queue = new LinkedList<>();
         queue.add(temp);
         while (!queue.isEmpty()) {
-            node node = queue.poll();//抛出队首元素
+            node2 node = queue.poll();//抛出队首元素
             for (int i = 0; i < 4; i++) {
                 int index = node.index;
                 int new_index = index + move[i];//确定x下一个位置
@@ -76,7 +80,7 @@ public class Pro1043 {
                 if ((index == 2 || index == 5 || index == 8) && i == 2) continue;
                 if ((index == 0 || index == 3 || index == 6) && i == 0) continue;
                 if (new_index >= 0 && new_index <= 8) {
-                    HDU.node new_node = new node(node.state, node.path, node.index, node.cantor);//定义新的节点
+                    HDU.node2 new_node = new node2(node.state, node.path, node.index, node.cantor);//定义新的节点
                     //更新数据
                     new_node.state[index] = new_node.state[new_index];//直接赋值
                     new_node.state[new_index] = 0;
@@ -106,7 +110,6 @@ public class Pro1043 {
                 }
             }
         }
-
     }
 
     private static int Cantor(int[] a) {//计算该状态的康托展开
@@ -120,26 +123,22 @@ public class Pro1043 {
             res += temp * fac[a.length - i - 1];//计算
         }
         return res + 1;//返回a在全排列中排第几位
-
     }
 
 }
 
-class node {
+class node2 {
     int[] state;//当前状态
     StringBuffer path;//路径
     int index;//x的位置
     int cantor;//康托展开
 
-    public node(int[] state, StringBuffer path, int cantor, int index) {
+    public node2(int[] state, StringBuffer path, int cantor, int index) {
         this.state = new int[state.length];
         System.arraycopy(state, 0, this.state, 0, state.length);
         this.path = new StringBuffer(path);
         this.index = index;
         this.cantor = cantor;
-    }
-
-    public node() {
     }
 
     @Override

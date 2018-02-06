@@ -1,8 +1,7 @@
 package HDU;
 
-import java.io.BufferedOutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,20 +13,72 @@ import java.util.ArrayList;
  * @desc
  */
 public class Test {
+    private static int[] target_index = new int[9];//target的索引数组
+    private static int[] origin = new int[8];//初始状态
+
     public static void main(String[] args) {
-
-        arrange(0, new int[9]);
-        PrintWriter pw = new PrintWriter(new BufferedOutputStream(System.out));
-
-        for (int i = 0; i < 100; i++) {
-
-            for (int s : list.get(i)) {
-                System.out.print(s);
-            }
-            System.out.println();
-        }
-
+        System.out.println(Arrays.toString(A(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
+        System.out.println(Arrays.toString(B(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
+        System.out.println(Arrays.toString(C(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
     }
+
+    private static int H(int[] num) {//评估函数
+        int h = 0;
+        for (int i = 0; i < 8; i++) {
+            int temp = Math.abs(target_index[num[i]] - i);
+            h += temp;
+        }
+        return h;
+    }
+
+    private static int Cantor(int[] num) {//康托展开
+        int sum = 0;
+        int fac[] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320};//0到9各个数的阶乘
+        for (int i = 0; i < 7; i++) {
+            int temp = 0;
+            for (int j = i + 1; j < 8; j++) {
+                if (num[i] > num[j]) temp++;
+            }
+            sum += temp * fac[7 - i];
+        }
+        return sum;
+    }
+
+    private static int[] A(int[] num) {//操作A：上下两行互换
+        int temp[] = new int[8];
+        int j = 7;
+        for (int i = 0; i < 8; i++) {
+            temp[i] = num[j--];
+        }
+        return temp;
+    }
+
+    private static int[] B(int[] num) {//操作B：每行同时循环右移一格
+        int temp[] = new int[8];
+
+        int j = 3;
+        for (int i = 0; i < 4; i++) {
+            temp[i] = num[j++];
+            if (j == 4) j = 0;
+        }
+        j = 5;
+        for (int i = 4; i < 8; i++) {
+            temp[i] = num[j++];
+            if (j == 8) j = 4;
+        }
+        return temp;
+    }
+
+    private static int[] C(int[] num) {//操作C：中间4个方块顺时针旋转一格
+        int temp[] = new int[8];
+        System.arraycopy(num, 0, temp, 0, 8);
+        temp[1] = num[6];
+        temp[2] = num[1];
+        temp[5] = num[2];
+        temp[6] = num[5];
+        return temp;
+    }
+
 
     private static ArrayList<int[]> list = new ArrayList<>();
     private static boolean visited[] = new boolean[9];

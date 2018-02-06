@@ -1,56 +1,219 @@
 package HDU;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-/**
- * @version 2017-5-14  下午8:05:52
- * @author<a href="mailto:953801304@qq.com">胡龙华</a>
- * @fileName p1070.java
- */
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Users\\wanyu\\Desktop\\1.txt");
-        PrintWriter printWriter = new PrintWriter(file);
-        Scanner sc = new Scanner(new File("C:\\Users\\wanyu\\Desktop\\Test.txt"));
+    public class Node
+    {
+        private int[][] info;
+        private int cost;
+        private String road;
 
-        int t = sc.nextInt();
-        while (t-- > 0) {
-            int n = sc.nextInt();
-            String str1[] = new String[n];
-            sc.nextLine();// 收掉前面的字符，后面才能正常收一行
-            String str2 = "";// 用来记录牛奶的牌子
-            double min = Double.MAX_VALUE;//用存  牛奶的最小价格（这是平均到天的价格）
-            int v = 0; // 用来记录容量，平均算到每天价格相等时，选择容量大的
-            for (int i = 0; i < n; i++) {
-                str1[i] = sc.nextLine();
-                String s[] = str1[i].split(" ");// 拆开，分别拿到 牌子、价格、容量、
-                //卫条件，防止容量小于200ML
-                if (Integer.parseInt(s[2]) < 200) {
-                    continue;
-                }
-                // 牛奶超过1000ml 只能算5天  以为过期了。
-                int day = Integer.parseInt(s[2]) / 200 < 5 ? Integer.parseInt(s[2]) / 200 : 5;//算下牛奶可以喝几天
-                double money = Integer.parseInt(s[1]) * 1.0 / day;// 算平均到每天的价格
-                if (money < min) { // 价格更低就把信息存起来
-                    min = money;
-                    str2 = s[0];
-                    v = Integer.parseInt(s[2]);
-                    // 平均每天价格相等，选择容量大的
-                } else if (money == min && v < Integer.parseInt(s[2])) {
-                    min = money;
-                    str2 = s[0];
-                    v = Integer.parseInt(s[2]);
-                }
+        public Node(int[][] info,int cost,String road)
+        {
+            this.cost = cost;
+            this.info = info;
+            this.road = road;
+        }
+    }
+
+    //    public class Compa implements Comparator<Node>
+//    {
+//
+//        @Override
+//        public int compare(Node n0, Node n1) {
+//            // TODO Auto-generated method stub
+//            //升序
+//            if(n0.cost<n1.cost)
+//            {
+//                return -1;
+//            }
+//            return 0;
+//        }
+//
+//    }
+    public void run()
+    {
+//        Compa com = new Compa();
+        Scanner scanner = new Scanner(System.in);
+        while(scanner.hasNext())
+        {
+            String s1 = scanner.nextLine();
+            String s2 = scanner.nextLine();
+
+            int[][] data = new int[2][4];
+            for(int i=0;i<4;i++)
+            {
+                data[0][i] = s1.charAt(i)-48;
+            }
+            for(int i=3;i>=0;i--)
+            {
+                data[1][3-i] = s1.charAt(i+4)-48;
             }
 
-            printWriter.append(str2).append("\n");
+
+            int target[][] = new int[2][4];
+            for(int i=0;i<4;i++)
+            {
+                target[0][i] = s2.charAt(i)-48;
+            }
+            for(int i=3;i>=0;i--)
+            {
+                target[1][3-i] = s2.charAt(i+4)-48;
+            }
+
+            List<Node> list = new ArrayList<Node>();
+
+            int[][] da = new int[2][4];
+            init(da,data);
+            int cos = cost(data,target);
+            Node node = new Node(da,cos,"");
+            list.add(node);
+            int level = 1;
+            while(list.size()>0)
+            {
+//                Collections.sort(list,com);
+                Node no = list.get(0);
+                int p = 0;
+                for(int i=1;i<list.size();i++)
+                {
+                    Node nod = list.get(i);
+                    if(nod.cost<no.cost)
+                    {
+                        no = nod;
+                        p = i;
+                    }
+                }
+
+                list.remove(p);
+                String str = no.road;
+                int[][] temp = no.info;
+
+                int[][] temp1 = new int[2][4];
+                if(str.length()==0||str.length()>0&&str.charAt(str.length()-1)!='A')
+                {
+                    init(temp1,temp);
+                    A(temp1);
+                    int a = cost(temp1,target);
+                    if(a==0)
+                    {
+                        System.out.println(str+"A");
+                        break;
+                    }else
+                    {
+                        Node n = new Node(temp1,a+level,str+"A");
+                        list.add(n);
+                    }
+
+                }
+
+                int[][] temp2 = new int[2][4];
+                init(temp2,temp);
+                B(temp2);
+                int b = cost(temp2,target);
+                if(b==0)
+                {
+                    System.out.println(str+"B");
+                    break;
+                }else
+                {
+                    Node n = new Node(temp2,b+level,str+"B");
+                    list.add(n);
+                }
+
+                int[][] temp3 = new int[2][4];
+                init(temp3,temp);
+                C(temp3);
+                int c = cost(temp3,target);
+                if(c==0)
+                {
+                    System.out.println(str+"C");
+                    break;
+                }else
+                {
+                    Node n = new Node(temp3,c+level,str+"C");
+                    list.add(n);
+                }
+
+
+                level++;
+
+            }
+
+
+
         }
-        printWriter.flush();
+
+    }
+    public void init(int[][] d,int[][] t)
+    {
+        for(int i=0;i<2;i++)
+        {
+            for (int j=0;j<4;j++)
+            {
+                d[i][j] = t[i][j];
+            }
+        }
+    }
+    public void A(int[][] d)
+    {
+        int[] tmp = {d[0][0],d[0][1],d[0][2],d[0][3]};
+        for(int i=0;i<4;i++)
+        {
+            d[0][i] = d[1][i];
+            d[1][i] = tmp[i];
+        }
+    }
+    public void C(int[][] d)
+    {
+        int tmp = d[0][1];
+        d[0][1] = d[1][1];
+        d[1][1] = d[1][2];
+        d[1][2] = d[0][2];
+        d[0][2] = tmp;
+    }
+
+    public void B(int[][] d)
+    {
+        int tmp = d[0][3];
+        for(int i=3;i>0;i--)
+        {
+            d[0][i] = d[0][i-1];
+        }
+        d[0][0] = tmp;
+        tmp = d[1][3];
+        for(int i=3;i>0;i--)
+        {
+            d[1][i] = d[1][i-1];
+        }
+        d[1][0] = tmp;
+    }
+    public int cost(int[][] t,int[][] d)
+    {
+        int number = 0;
+        for(int i=0;i<2;i++)
+        {
+            for(int j=0;j<4;j++)
+            {
+                if(t[i][j]!=d[i][j])
+                {
+                    number++;
+                }
+            }
+        }
+
+        return number;
+    }
+
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+        new Main().run();
     }
 
 }

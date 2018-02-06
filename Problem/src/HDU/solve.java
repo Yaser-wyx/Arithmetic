@@ -18,7 +18,7 @@ public class solve {
         while (true) {
             int now = in.nextInt();//当前x的位置
             in.nextLine();
-            String map[] = in.nextLine().split(" {2}");//原始
+            String map[] = in.nextLine().split(" ");//原始
             String line = in.nextLine();
             if (line.equals("unsolvable")) {
                 System.out.println("unsolvable");
