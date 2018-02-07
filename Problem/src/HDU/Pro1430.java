@@ -1,7 +1,8 @@
 package HDU;
 
 import java.io.BufferedInputStream;
-import java.util.PriorityQueue;
+import java.io.FileNotFoundException;
+import java.util.ArrayDeque;
 import java.util.Scanner;
 
 /**
@@ -15,39 +16,36 @@ import java.util.Scanner;
  */
 public class Pro1430 {
     private static int[] origin = new int[8];//初始状态
-    private static int[] target_index = new int[9];//target的索引数组
     private static String[] path;
     private static int end;
     private static boolean[] vis;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
+//        Scanner in = new Scanner(new File("C:\\Users\\wanyu\\Desktop\\Test.txt"));
+        create();
+        path[0] = "";
         while (in.hasNext()) {
             init(in);
-            int cantor = Cantor(origin);
-            if (cantor == end) {
-                System.out.println("AA");
-                continue;
-            }
-            Node1430 start = new Node1430(0, H(origin), origin, cantor);//初始化开始节点
-
-            A_star(start);
+            System.out.println(path[end]);
         }
     }
 
-    private static void A_star(Node1430 start) {
-        PriorityQueue<Node1430> queue = new PriorityQueue<>();
+    private static void create() {//打表操作
+        int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
+        Node1430 start = new Node1430(num, 0);//初始化开始节点
+        path = new String[40320];
+        vis = new boolean[40320];
+        BFS(start);
+    }
+
+    private static void BFS(Node1430 start) {
+        ArrayDeque<Node1430> queue = new ArrayDeque<>();
         queue.add(start);
         path[start.cantor] = "";
-        vis[start.cantor] = true;
         while (!queue.isEmpty()) {
             Node1430 node = queue.poll();
-            int g = node.g + 1;
             int cantor = node.cantor;
-            if (cantor == end) {
-                System.out.println(path[cantor]);
-            }
-            vis[cantor] = true;
             int[] temp1 = A(node.state);
             int[] temp2 = B(node.state);
             int[] temp3 = C(node.state);
@@ -55,36 +53,43 @@ public class Pro1430 {
             int cantor2 = Cantor(temp2);
             int cantor3 = Cantor(temp3);
             if (!vis[cantor1]) {
-                Node1430 node1 = new Node1430(g, H(temp1), temp1, cantor1);
+                vis[cantor1] = true;
+                Node1430 node1 = new Node1430(temp1, cantor1);
                 path[cantor1] = path[cantor] + "A";
                 queue.add(node1);
             }
+
             if (!vis[cantor2]) {
-                Node1430 node2 = new Node1430(g, H(temp2), temp2, cantor2);
+                vis[cantor2] = true;
+                Node1430 node2 = new Node1430(temp2, cantor2);
                 path[cantor2] = path[cantor] + "B";
                 queue.add(node2);
             }
             if (!vis[cantor3]) {
-                Node1430 node3 = new Node1430(g, H(temp3), temp3, cantor3);
+                vis[cantor3] = true;
+                Node1430 node3 = new Node1430(temp3, cantor3);
                 path[cantor3] = path[cantor] + "C";
                 queue.add(node3);
             }
         }
-
     }
+
 
     private static void init(Scanner in) {
         String line1[] = in.nextLine().split("");
         String line2[] = in.nextLine().split("");
-        path = new String[40320];
-        vis = new boolean[40320];
         for (int i = 0; i < 8; i++) {
             origin[i] = Integer.parseInt(line1[i]);
         }
         int target[] = new int[8];
+        int index[] = new int[9];
         for (int i = 0; i < 8; i++) {
             target[i] = Integer.parseInt(line2[i]);
-            target_index[target[i]] = i;
+            index[target[i]] = i;
+        }
+        for (int i = 1; i < 9; i++) {
+            target[index[origin[i - 1]]] = i;
+            origin[i - 1] = i;
         }
         end = Cantor(target);//计算终点的康托展开
     }
@@ -136,38 +141,16 @@ public class Pro1430 {
         }
         return sum;
     }
-
-    private static int H(int[] num) {//评估函数
-        int h = 0;
-        for (int i = 0; i < 8; i++) {
-            int temp = Math.abs(target_index[num[i]] - i);
-            h += temp;
-        }
-        return h;
-    }
 }
 
-class Node1430 implements Comparable<Node1430> {
+class Node1430 {
     int[] state;
     int cantor;
-    int f, g, h;//评估函数
 
-    Node1430(int g, int h, int[] state, int cantor) {
+    Node1430(int[] state, int cantor) {
         this.state = new int[8];
         System.arraycopy(state, 0, this.state, 0, state.length);
         this.cantor = cantor;
-        flush(g, h);
     }
 
-
-    public void flush(int g, int h) {
-        this.g = g;
-        this.h = h * 10;
-        this.f = g + h;//刷新f值
-    }
-
-    @Override
-    public int compareTo(Node1430 o) {
-        return f - o.f;
-    }
 }

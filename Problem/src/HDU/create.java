@@ -1,6 +1,11 @@
 package HDU;
 
+import org.apache.commons.lang3.RandomUtils;
+
 import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -13,12 +18,31 @@ import java.util.Scanner;
  * @desc
  */
 public class create {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
         int n = in.nextInt();
+        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
+        PrintWriter printWriter = new PrintWriter(file);
         for (int i = 0; i < n; i++) {
+            boolean vis[] = new boolean[9];
+            for (int j = 0; j < 8; j++) {
+                int temp = RandomUtils.nextInt(1, 9);
+                while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
+                vis[temp] = true;
+                printWriter.print(temp);
+            }
+            printWriter.println();
+            vis = new boolean[9];
+            for (int j = 0; j < 8; j++) {
+                int temp = RandomUtils.nextInt(1, 9);
+                while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
+                vis[temp] = true;
+                printWriter.print(temp);
+            }
+            printWriter.println();
 
         }
+        printWriter.flush();
     }
   /*  public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
