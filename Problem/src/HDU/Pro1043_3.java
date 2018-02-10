@@ -1,7 +1,6 @@
 package HDU;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedInputStream;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -22,9 +21,9 @@ public class Pro1043_3 {
     private static int start;//起始点
     private static String[] path;//从起点到终点的路径
     private static int[] x = {0, 1, 2, 0, 1, 2, 0, 1, 2};//将一维数组转化为二维数组
-    private static int[] y = {0, 0, 0, 1, 1, 1, 2, 2, 2};
+    private static int[] y = {0, 0, 0, 1, 1, 1, 2, 2, 2};//将一维数组转化为二维数组
     private static boolean[] visited;
-    private static int[] move = {1, -1, 3, -3};
+    private static int[] move = {1, -1, 3, -3};//移动数组
     private static int end;//结束状态
 
     private static void init(Scanner in) {//初始化，读取数据
@@ -71,9 +70,7 @@ public class Pro1043_3 {
                     node.cantor = cantor;
                     node.flush(temp.g + 1, h(node.state));//更新f值
                     if (!visited[cantor]) {//是否已经访问过了
-                        long time1 = System.currentTimeMillis();
                         queue.add(node);//入队
-
                         switch (move[i]) {//更新路径
                             case 1:
                                 path[cantor] = path[temp.cantor] + "r";
@@ -99,46 +96,28 @@ public class Pro1043_3 {
 
             }
         }
-
-
     }
 
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new File("C:\\Users\\wanyu\\Desktop\\Test.txt"));
+    public static void main(String[] args) {
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
         end = cantor(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
-        int x = Integer.parseInt(in.nextLine());
-        long time = System.currentTimeMillis();
-        while (x != 0) {
-            x--;
-
+        while (in.hasNext()) {
             init(in);
             if (judge()) {
                 //构造初始节点
                 Node1 node1 = new Node1(0, h(map), start, map, cantor(map));
-                if (node1.cantor == end) {
+                if (node1.cantor == end) {//如果目标状态等于初始状态则直接输出
                     System.out.println("lr");
                     continue;
                 }
                 A_Star(node1);//A*
-
-                int sum = 0;
-                for (boolean v : visited) {
-                    if (v) sum++;
-                }
-                System.out.println("---" + sum + "---");
             } else {
                 System.out.println("unsolvable");
             }
         }
-        System.out.println("--------------------------");
-        System.out.println(System.currentTimeMillis() - time);
-        System.out.println("=================================");
-        System.out.println(t);
-
     }
 
-    private static long t = 0;
 
     //评估函数
     private static int h(int[] a) {//估计从当前节点到终点的代价
@@ -149,9 +128,7 @@ public class Pro1043_3 {
             int dis = Math.abs(x[i] - x[n]) + Math.abs(y[i] - y[n]);
             sum += dis;
         }
-
         return sum;
-
     }
 
     private static boolean judge() {//判断是否有解
@@ -196,7 +173,6 @@ class Node1 implements Comparable<Node1> {
         System.arraycopy(state, 0, this.state, 0, state.length);
         flush(g, h);
     }
-
     public void flush(int g, int h) {
         this.g = g;
         this.h = h * 10;
@@ -209,7 +185,6 @@ class Node1 implements Comparable<Node1> {
         this.state = new int[state.length];
         System.arraycopy(state, 0, this.state, 0, state.length);
     }
-
     @Override
     public int compareTo(Node1 n) {
         return f - n.f;

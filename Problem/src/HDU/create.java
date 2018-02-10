@@ -18,57 +18,58 @@ import java.util.Scanner;
  * @desc
  */
 public class create {
+    /*    public static void main(String[] args) throws FileNotFoundException {
+            Scanner in = new Scanner(new BufferedInputStream(System.in));
+            int n = in.nextInt();
+            File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
+            PrintWriter printWriter = new PrintWriter(file);
+            for (int i = 0; i < n; i++) {
+                boolean vis[] = new boolean[9];
+                for (int j = 0; j < 8; j++) {
+                    int temp = RandomUtils.nextInt(1, 9);
+                    while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
+                    vis[temp] = true;
+                    printWriter.print(temp);
+                }
+                printWriter.println();
+                vis = new boolean[9];
+                for (int j = 0; j < 8; j++) {
+                    int temp = RandomUtils.nextInt(1, 9);
+                    while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
+                    vis[temp] = true;
+                    printWriter.print(temp);
+                }
+                printWriter.println();
+
+            }
+            printWriter.flush();
+        }*/
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
-        int n = in.nextInt();
-        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
+        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");//测试用例输出的路径，按需修改
         PrintWriter printWriter = new PrintWriter(file);
-        for (int i = 0; i < n; i++) {
-            boolean vis[] = new boolean[9];
-            for (int j = 0; j < 8; j++) {
-                int temp = RandomUtils.nextInt(1, 9);
-                while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
-                vis[temp] = true;
-                printWriter.print(temp);
-            }
-            printWriter.println();
-            vis = new boolean[9];
-            for (int j = 0; j < 8; j++) {
-                int temp = RandomUtils.nextInt(1, 9);
-                while (vis[temp]) temp = RandomUtils.nextInt(1, 9);
-                vis[temp] = true;
-                printWriter.print(temp);
-            }
-            printWriter.println();
-
-        }
-        printWriter.flush();
-    }
-  /*  public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new BufferedInputStream(System.in));
-        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
-        PrintWriter printWriter = new PrintWriter(file);
-        int n = in.nextInt();
-        printWriter.append(String.valueOf(n)).append("\n");
+        int n = in.nextInt();//输入测试用例的个数
         for (int i = 0; i < n; i++) {
             boolean[] visted = new boolean[9];
             StringBuffer stringBuffer = new StringBuffer();
             int start = RandomUtils.nextInt(1, 9);//随机生成起点
             for (int j = 0; j < 9; j++) {
                 if (j == start) {
-                    stringBuffer.append("x ");
+                    stringBuffer.append("x  ");
                     continue;
                 }
                 int x = RandomUtils.nextInt(1, 9);
                 while (visted[x]) x = RandomUtils.nextInt(1, 9);
                 visted[x] = true;
-                stringBuffer.append(x).append(" ");
+                stringBuffer.append(x);
+                if (j != 8)
+                    stringBuffer.append("  ");
             }
             stringBuffer.append("\n");
             printWriter.append(stringBuffer);
         }
         printWriter.flush();
-    }*/
+    }
    /* public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
         File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");

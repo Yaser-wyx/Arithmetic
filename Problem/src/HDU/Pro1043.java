@@ -1,9 +1,7 @@
 package HDU;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.io.BufferedInputStream;
+import java.util.ArrayDeque;
 import java.util.Scanner;
 
 /**
@@ -29,58 +27,54 @@ public class Pro1043 {
         for (int i = 0; i < line.length; i++) {
             if (line[i].equals(" ")) continue;
             if (line[i].equals("x")) {
-                map[j++] = 0;
+                map[j++] = 0;//对X进行转换
                 continue;
             }
             map[j++] = Integer.parseInt(line[i]);
         }
     }
 
-    private static void create() {
-        int[] num = {1, 2, 3, 4, 5, 6, 7, 8, 0};
-        int cantor = Cantor(num);
-
+    private static void create() {//进行打表操作
+        int[] num = {1, 2, 3, 4, 5, 6, 7, 8, 0};//以目标状态作为初始状态进行逆向打表
+        int cantor = Cantor(num);//计算康拓展开
         path[cantor] = "lr";//初始状态
         visited = new boolean[363000];//用于判重
-        node2 node = new node2(num, new StringBuffer(""), cantor, 8);
+        Node2 node = new Node2(num, new StringBuffer(""), cantor, 8);//初始节点
         BFS(node);
     }
 
 
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Users\\wanyu\\Desktop\\Test.txt");
-        Scanner in = new Scanner(file);
+    public static void main(String[] args) {
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
         create();//进行打表
-
         while (in.hasNext()) {
             init(in);//初始化
-            //先判断是否为无解
-            //判断是否为无解只需要判断逆序对的个数
-            int cantor = Cantor(map);
-            if (path[cantor] == null) {
+            int cantor = Cantor(map);//计算初始状态的康托
+            if (path[cantor] == null) {//如果没有到该状态的路径表示无解
                 System.out.println("unsolvable");
                 continue;
             }
             StringBuffer stringBuffer = new StringBuffer(path[cantor]);
+            //注意因为是以目标状态作为初始状态进行打表的
+            // 所以该路径是从目标状态到初始状态的，所以在输出时需要进行反转
             System.out.println(stringBuffer.reverse());
-
 
         }
     }
 
-    private static void BFS(node2 temp) {
-        Queue<node2> queue = new LinkedList<>();
-        queue.add(temp);
+    private static void BFS(Node2 start) {//使用BFS进行解答树的搜索
+        ArrayDeque<Node2> queue = new ArrayDeque<>();
+        queue.add(start);
         while (!queue.isEmpty()) {
-            node2 node = queue.poll();//抛出队首元素
-            for (int i = 0; i < 4; i++) {
+            Node2 node = queue.poll();//抛出队首元素
+            for (int i = 0; i < 4; i++) {//对该节点进行扩展
                 int index = node.index;
                 int new_index = index + move[i];//确定x下一个位置
                 //判断当前位置是否可以移动
                 if ((index == 2 || index == 5 || index == 8) && i == 2) continue;
                 if ((index == 0 || index == 3 || index == 6) && i == 0) continue;
-                if (new_index >= 0 && new_index <= 8) {
-                    HDU.node2 new_node = new node2(node.state, node.path, node.index, node.cantor);//定义新的节点
+                if (new_index >= 0 && new_index <= 8) {//边界处理
+                    Node2 new_node = new Node2(node.state, node.path, node.index, node.cantor);//定义新的节点
                     //更新数据
                     new_node.state[index] = new_node.state[new_index];//直接赋值
                     new_node.state[new_index] = 0;
@@ -88,8 +82,8 @@ public class Pro1043 {
                     int cantor = Cantor(new_node.state);//计算该状态的康托展开
                     if (visited[cantor]) continue;//如果该状态已经访问过，直接进入下一个状态
                     new_node.cantor = cantor;
-                    visited[cantor] = true;
-                    switch (move[i]) {
+                    visited[cantor] = true;//标记该状态已经访问过了
+                    switch (move[i]) {//添加路径
                         case 1:
                             new_node.path.append("l");
                             break;
@@ -105,8 +99,8 @@ public class Pro1043 {
                         default:
                             break;
                     }
-                    path[cantor] = new_node.path.toString();
-                    queue.add(new_node);
+                    path[cantor] = new_node.path.toString();//保存路径信息
+                    queue.add(new_node);//将该节点添加到队列中
                 }
             }
         }
@@ -127,13 +121,13 @@ public class Pro1043 {
 
 }
 
-class node2 {
+class Node2 {
     int[] state;//当前状态
     StringBuffer path;//路径
     int index;//x的位置
     int cantor;//康托展开
 
-    public node2(int[] state, StringBuffer path, int cantor, int index) {
+    public Node2(int[] state, StringBuffer path, int cantor, int index) {
         this.state = new int[state.length];
         System.arraycopy(state, 0, this.state, 0, state.length);
         this.path = new StringBuffer(path);
@@ -141,8 +135,4 @@ class node2 {
         this.cantor = cantor;
     }
 
-    @Override
-    public String toString() {//打印节点的路径
-        return path.toString();
-    }
 }

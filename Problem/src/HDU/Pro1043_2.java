@@ -1,7 +1,6 @@
 package HDU;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedInputStream;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
@@ -31,25 +30,22 @@ public class Pro1043_2 {
         visited1 = new boolean[363000];
         visited2 = new boolean[363000];
         int j = 0;
-        for (int i = 0; i < line.length; i++) {
-            if (line[i].equals(" ")) continue;
-            if (line[i].equals("x")) {
+        for (String aLine : line) {
+            if (aLine.equals(" ")) continue;
+            if (aLine.equals("x")) {
                 start = j;//起始点
                 map[j++] = 0;
                 continue;
             }
-            map[j++] = Integer.parseInt(line[i]);
+            map[j++] = Integer.parseInt(aLine);
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new File("C:\\Users\\wanyu\\Desktop\\Test.txt"));
-        int x = Integer.parseInt(in.nextLine());
-        long time = System.currentTimeMillis();
-        while (x != 0) {
-            x--;
-            init(in);
-            if (judge()) {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        while (in.hasNext()) {
+            init(in);//初始化
+            if (judge()) {//判断有无解
                 //状态可达
                 //进行双向广搜
                 Node snode = new Node(map, Cantor(map), start);//初始化开始节点
@@ -57,31 +53,16 @@ public class Pro1043_2 {
                 int cantor = Cantor(num);
                 Node enode = new Node(num, cantor, 8);//初始化结束节点
                 BFS(snode, enode);
-                int sum = 0;
-                for (boolean v2 : visited2) {
-                    if (v2) sum++;
-                }
-                for (boolean v1 : visited1) {
-                    if (v1) sum++;
-                }
-                System.out.println("---" + sum + "---");
             } else {
                 //状态不可达
                 System.out.println("unsolvable");
             }
         }
-        System.out.println("-----------------------------------------");
-        System.out.println(System.currentTimeMillis() - time);
-        System.out.println("=================================");
-        System.out.println(t);
     }
 
-    private static long t = 0;
 
     private static void BFS(Node start, Node end) {//双向广搜
         //两个初始点已访问
-        long time = System.currentTimeMillis();
-
         visited1[start.cantor] = true;
         visited2[end.cantor] = true;
         //初始化两个节点的初始路径
@@ -93,8 +74,8 @@ public class Pro1043_2 {
         Squeue.add(start);
         Equeue.add(end);
 
-        while (!Squeue.isEmpty() && !Equeue.isEmpty()) {//两个同时不为空
-            //先扩展开始节点
+        while (!Squeue.isEmpty() && !Equeue.isEmpty()) {//两个同时不为空，同时对两个状态进行扩展
+            //先扩展初始状态
             Node snode = Squeue.poll();
             int Sindex = snode.index;
             for (int i = 0; i < 4; i++) {
@@ -115,17 +96,16 @@ public class Pro1043_2 {
                         visited1[cantor] = true;//设为已访问
                         if (visited2[cantor]) {
                             //如果该节点两边都扩展到了，则表示已经找到了
-                            System.out.println(p + new StringBuilder(path[cantor]).reverse());//需要将路径进行翻转操作
-                            t += System.currentTimeMillis() - time;
+                            System.out.println(p + new StringBuilder(path[cantor]).reverse());
+                            //因为从目标状态过来的，所以需要将路径进行翻转操作
                             return;
                         }
-                        path[cantor] = p;
-                        Squeue.add(newNode);
+                        path[cantor] = p;//保存路径
+                        Squeue.add(newNode);//入队
                     }
                 }
-
             }
-            //再扩展结束节点
+            //再扩展目标状态
             Node enode = Equeue.poll();
             int Eindex = enode.index;
             for (int i = 0; i < 4; i++) {
@@ -148,22 +128,22 @@ public class Pro1043_2 {
                         if (visited1[cantor]) {
                             //如果该节点两边都扩展到了，则表示已经找到了
                             System.out.println(path[cantor] + p.reverse());
-                            t += System.currentTimeMillis() - time;
                             return;
                         }
                         path[cantor] = p.toString();
-                        Equeue.add(newNode);
+                        Equeue.add(newNode);//入队
                     }
                 }
-
             }
-
-
         }
     }
 
-
-    private static String transform(int x, int state) {//扩展方向|从开始还是结尾扩展而来的
+    /**
+     * @param x     扩展方向
+     * @param state 从开始还是结尾扩展而来的
+     * @return 方向
+     */
+    private static String transform(int x, int state) {
         String res = "";
         if (state == 1) {//开始节点
             switch (x) {
@@ -196,24 +176,21 @@ public class Pro1043_2 {
                     break;
             }
         }
-
-
         return res;
 
     }
 
     private static boolean judge() {//判断是否有解只需要判断逆序对的个数
-
-        int num = 0;
+        int num = 0;//逆序数和
         for (int i = 0; i < map.length - 1; i++) {
-            if (map[i] == 0) continue;
+            if (map[i] == 0) continue;//如果是0就跳过
             for (int j = i + 1; j < map.length; j++) {
                 if (map[i] > map[j] && map[j] != 0) {
                     num++;
                 }
             }
         }
-        return num % 2 == 0;//如果是偶数，表示该状态可达
+        return (num & 1) == 0;//如果是偶数，表示该状态可达
     }
 
     private static int Cantor(int[] nums) {//计算康托展开式
@@ -227,8 +204,6 @@ public class Pro1043_2 {
             res += sum * fac[nums.length - i - 1];
         }
         return res + 1;
-
-
     }
 }
 
@@ -243,6 +218,4 @@ class Node {
         this.cantor = cantor;
         this.index = index;
     }
-
-
 }

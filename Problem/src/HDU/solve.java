@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @desc
  */
 public class solve {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
         String line1[] = in.nextLine().split("");
         String line2[] = in.nextLine().split("");
@@ -38,7 +38,7 @@ public class solve {
             System.out.print(s);
         }
 
-    }
+    }*/
 
     private static String[] A(String[] num) {//操作A：上下两行互换
         String temp[] = new String[8];
@@ -74,21 +74,31 @@ public class solve {
         temp[6] = num[5];
         return temp;
     }
-   /* public static void main(String[] args) {
+
+    public static void main(String[] args) {
+        //输入初始状态和步骤，自动进行求解
         Scanner in = new Scanner(new BufferedInputStream(System.in));
         while (true) {
-            int now = in.nextInt();//当前x的位置
-            in.nextLine();
-            String map[] = in.nextLine().split(" ");//原始
-            String line = in.nextLine();
+            int now = 0;
+            int j = 0;
+            String map[] = new String[9];
+            String line1[] = in.nextLine().split("");
+            for (String aLine : line1) {
+                if (aLine.equals(" ")) continue;
+                if (aLine.equals("x")) {
+                    now = j;//起始点
+                }
+                map[j++] = aLine;
+            }
+            String line = in.nextLine();//步骤
             if (line.equals("unsolvable")) {
                 System.out.println("unsolvable");
                 continue;
             }
-            String step[] = line.split("");//步骤
+            String step[] = line.split("");
 
-            for (int i = 0; i < step.length; i++) {
-                switch (step[i]) {
+            for (String aStep : step) {
+                switch (aStep) {
                     case "u":
                         map[now] = map[now - 3];
                         map[now - 3] = "x";
@@ -113,9 +123,9 @@ public class solve {
             }
 
             for (String s : map) {
-                System.out.print(s + " ");
+                System.out.print(s + " ");//输出结果
             }
             System.out.println();
         }
-    }*/
+    }
 }

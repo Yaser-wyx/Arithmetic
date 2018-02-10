@@ -17,9 +17,9 @@ public class Test {
     private static int[] origin = new int[8];//初始状态
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(A(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
-        System.out.println(Arrays.toString(B(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
-        System.out.println(Arrays.toString(C(new int[]{1, 2, 3, 4, 5, 6, 7, 8})));
+        int[] a = {1, 4, 2, 8, 6, 3};
+        int[] nums = {1, 3, 5, 7, 9};
+        System.out.println(-Arrays.binarySearch(nums, 0, nums.length, 8) - 1);
     }
 
     private static int H(int[] num) {//评估函数
