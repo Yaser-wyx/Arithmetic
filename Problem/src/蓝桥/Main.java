@@ -1,109 +1,34 @@
 package 蓝桥;
 
-import java.util.*;
-import java.math.*;
+import java.util.Scanner;
 
 public class Main {
-    public static final int N = 10010;
-    public static char[] str = new char[N];
-    public static Stack<Integer> num = new Stack<Integer>();
-    public static Stack<String> op = new Stack<String>();
-
-    public static int max(int a, int b) {
-        return a > b ? a : b;
-    }
-
-    public static int priority(String c) {
-        if (c.equals("*")) {
-            return 2;
-        }
-        if (c.equals("+")) {
-            return 1;
-        }
-        return 0;
-    }
-
-    public static void calculate() {
-        int suma = 0, sumb = 0;
-        int b = num.peek();
-        num.pop();
-        int a = num.peek();
-        num.pop();
-        switch (op.peek()) {
-            case "+":
-                num.push(a + b);
-                break;
-            case "*":
-                num.push(a * b);
-                break;
-            case "S":
-                while (b != 0) {
-                    sumb += b % 10;
-                    b /= 10;
-                }
-                while (a != 0) {
-                    suma += a % 10;
-                    a /= 10;
-                }
-                num.push(max(suma, sumb));
-                break;
-        }
-        op.pop();
-    }
-
     public static void main(String[] args) {
-        Scanner cin = new Scanner(System.in);
-        int i = 0, j = 0, t = 0, n = 0, m = 0, tt = 0, tmp = 0;
-        t = cin.nextInt();
-        while (t-- != 0) {
-            String s = cin.next();
-            s += "=";
-            str = s.toCharArray();
-
-            while (!op.empty()) {
-                op.pop();
-            }
-            while (!num.empty()) {
-                num.pop();
-            }
-            int len = str.length;
-
-            for (i = 0; i < len; i++) {
-                if (str[i] >= '0' && str[i] <= '9') {
-                    //sscanf(str + i, "%d%n", &tmp, &n);
-                    //i += n - 1;
-                    tmp = 0;
-                    for (; i < len; ++i) {
-                        if (str[i] >= '0' && str[i] <= '9') {
-                            tmp = tmp * 10 + (int) (str[i] - '0');
-                        } else {
-                            break;
-                        }
-                    }
-                    --i;
-                    num.push(tmp);
-                } else if (str[i] == '(') {
-                    op.push(String.valueOf(str[i]));
-                } else if (str[i] == ')') {
-                    while (op.peek().equals("(") != true) {
-                        calculate();
-                    }
-                    op.pop();
-                } else if (str[i] == 'S') {
-                    op.push("(");
-                    op.push("S");
-                    i += 4;
-                } else if (str[i] == ',') {
-                } else if (op.empty() || priority(String.valueOf(str[i])) > priority(op.peek())) {
-                    op.push(String.valueOf(str[i]));
-                } else {
-                    while (false == op.empty() && priority(String.valueOf(str[i])) <= priority(op.peek())) {
-                        calculate();
-                    }
-                    op.push(String.valueOf(str[i]));
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int add = scanner.nextInt();
+        int nums[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+        for (int i = 1; i <= add; i++) {
+            int k;
+            for (k = n - 1; k >= 0 && nums[k - 1] > nums[k]; k--) ;  //定位第一个不可以增加的数
+            k--;//最后一个可以增加的数
+            int find = nums[k] + 1;
+            int k2;
+            for (k2 = n - 1; k2 > k; k2--) {
+                if (nums[k2] == find) {
+                    break;
                 }
             }
-            System.out.printf("%d\n", num.peek());
+            int temp = nums[k2];
+            nums[k2] = nums[k];
+            nums[k] = temp;//交换
+
+
+
         }
+
     }
 }
